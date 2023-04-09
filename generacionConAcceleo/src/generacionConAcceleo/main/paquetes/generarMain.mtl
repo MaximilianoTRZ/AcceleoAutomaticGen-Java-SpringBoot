@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module generarMain('http://www.example.org/ejemploDC4')]
+
+[template public generarMain()]
+
+[/template]

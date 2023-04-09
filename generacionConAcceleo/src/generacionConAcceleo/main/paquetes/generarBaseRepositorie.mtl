@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module generarBaseRepositorie('http://www.example.org/ejemploDC4')]
+[template public generarBaseRepositorie()]
+[file ('repositories/BaseRepository.java', false, 'UTF-8')]
+package repositories;
+
+import java.io.Serializable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.example.apiPractica.entities.*;
+
+public interface BaseRepository <E extends Base, ID extends Serializable> extends JpaRepository<E, ID>{
+}
+
+[/file]
+[/template]

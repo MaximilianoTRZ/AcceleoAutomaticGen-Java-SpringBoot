@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ejemploDC4" nsURI="http://www.example.org/ejemploDC4" nsPrefix="ejemploDC4">
+  <eClassifiers xsi:type="ecore:EClass" name="DiagramaClases">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paquetes_contenidos" upperBound="-1"
+        eType="#//Paquete" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clase" eSuperTypes="#//Clasificador">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributos_contenidos" upperBound="-1"
+        eType="#//Atributo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operaciones_contenidas"
+        upperBound="-1" eType="#//Operacion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementaciones_contenidas"
+        upperBound="-1" eType="#//Implementacion" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relaciones_contenidas"
+        upperBound="-1" eType="#//Relacion" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Clasificador"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Clasificador" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="herencias_contenidas" upperBound="-1"
+        eType="#//Herencia" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atributo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibilidad" eType="#//TipoVisibilidad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoDato"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibilidad" eType="#//TipoVisibilidad"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="retorno" eType="#//TipoRetorino"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Herencia">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" eType="#//Clasificador"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" eType="#//Clasificador"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Implementacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" eType="#//Clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" eType="#//Interface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" eType="#//Clase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" eType="#//Clasificador"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//TipoRelacion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiplicidad" eType="#//Multiplicidad"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoVisibilidad">
+    <eLiterals name="private"/>
+    <eLiterals name="public" value="1"/>
+    <eLiterals name="protected" value="2"/>
+    <eLiterals name="package" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoDato">
+    <eLiterals name="String"/>
+    <eLiterals name="int" value="1" literal="int"/>
+    <eLiterals name="double" value="2" literal="double"/>
+    <eLiterals name="boolean" value="3" literal="boolean"/>
+    <eLiterals name="Long" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoRetorino">
+    <eLiterals name="void"/>
+    <eLiterals name="object" value="1"/>
+    <eLiterals name="int" value="2"/>
+    <eLiterals name="String" value="3"/>
+    <eLiterals name="boolean" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Paquete">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clasificadores_contenidos"
+        upperBound="-1" eType="#//Clasificador" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TipoRelacion">
+    <eLiterals name="unidireccional"/>
+    <eLiterals name="bidireccional" value="1"/>
+    <eLiterals name="agregacion" value="2"/>
+    <eLiterals name="composicion" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Multiplicidad">
+    <eLiterals name="OneToOne"/>
+    <eLiterals name="OneToMany" value="1"/>
+    <eLiterals name="ManyToOne" value="2"/>
+    <eLiterals name="ManyToMany" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

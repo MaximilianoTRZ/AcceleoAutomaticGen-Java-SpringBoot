@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/EjemploDC4/src-gen" creationIcons="false" editDirectory="/EjemploDC4.edit/src-gen"
+    editorDirectory="/EjemploDC4.editor/src-gen" modelPluginID="EjemploDC4" modelName="EjemploDC4"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ejemploDC4.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="EjemploDC4" disposableProviderFactory="true" ecorePackage="ejemploDC4.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejemploDC4.ecore#//TipoVisibilidad">
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoVisibilidad/private"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoVisibilidad/public"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoVisibilidad/protected"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoVisibilidad/package"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejemploDC4.ecore#//TipoDato">
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoDato/String"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoDato/int"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoDato/double"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoDato/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoDato/Long"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejemploDC4.ecore#//TipoRetorino">
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRetorino/void"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRetorino/object"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRetorino/int"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRetorino/String"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRetorino/boolean"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejemploDC4.ecore#//TipoRelacion">
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRelacion/unidireccional"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRelacion/bidireccional"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRelacion/agregacion"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//TipoRelacion/composicion"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ejemploDC4.ecore#//Multiplicidad">
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//Multiplicidad/OneToOne"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//Multiplicidad/OneToMany"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//Multiplicidad/ManyToOne"/>
+      <genEnumLiterals ecoreEnumLiteral="ejemploDC4.ecore#//Multiplicidad/ManyToMany"/>
+    </genEnums>
+    <genClasses ecoreClass="ejemploDC4.ecore#//DiagramaClases">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//DiagramaClases/paquetes_contenidos"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Clase">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Clase/atributos_contenidos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Clase/operaciones_contenidas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Clase/implementaciones_contenidas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Clase/relaciones_contenidas"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Interface"/>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Clasificador">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Clasificador/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Clasificador/herencias_contenidas"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Atributo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Atributo/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Atributo/visibilidad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Atributo/tipo"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Operacion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Operacion/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Operacion/visibilidad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Operacion/retorno"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Herencia">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Herencia/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Herencia/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Implementacion">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Implementacion/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Implementacion/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Relacion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Relacion/rol"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Relacion/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Relacion/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Relacion/tipo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Relacion/multiplicidad"/>
+    </genClasses>
+    <genClasses ecoreClass="ejemploDC4.ecore#//Paquete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ejemploDC4.ecore#//Paquete/nombre"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ejemploDC4.ecore#//Paquete/clasificadores_contenidos"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

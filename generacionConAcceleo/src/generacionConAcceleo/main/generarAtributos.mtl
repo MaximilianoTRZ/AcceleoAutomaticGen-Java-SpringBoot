@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module generarAtributos('http://www.example.org/ejemploDC4')]
+[template public generarAtributos(clase : Clase)]
+[for (a : Atributo | clase.atributos_contenidos)]
+	[if(a.nombre='id')]
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+[a.visibilidad/] [a.tipo/] [a.nombre/];
+
+	[/if]
+	[if(a.nombre<>'id')]
+@Column(name=[a.nombre/])
+[a.visibilidad/] [a.tipo/] [a.nombre/];
+
+	[/if]
+[/for]
+[for (r: Relacion | relaciones_contenidas)]
+@[r.multiplicidad/]
+private [r.destino.nombre/] [r.destino.nombre.toLowerCase()/];
+[/for]
+[/template]

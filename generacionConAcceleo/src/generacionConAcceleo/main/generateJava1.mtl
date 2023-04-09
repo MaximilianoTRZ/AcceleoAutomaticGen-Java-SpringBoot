@@ -1,0 +1,60 @@
+[comment encoding = UTF-8 /]
+[module generateJava1('http://www.example.org/ejemploDC4')]
+
+
+[import generacionConAcceleo::main::paquetes::generarBaseEntitie /]
+[import generacionConAcceleo::main::paquetes::generarEntities /]
+
+[import generacionConAcceleo::main::paquetes::generarBaseControllerInterface /]
+[import generacionConAcceleo::main::paquetes::generarBaseControllerImpl /]
+[import generacionConAcceleo::main::paquetes::generarControllers /]
+
+[import generacionConAcceleo::main::paquetes::generarBaseService /]
+[import generacionConAcceleo::main::paquetes::generarBaseServiceImpl /]
+[import generacionConAcceleo::main::paquetes::generarServicesInterface /]
+[import generacionConAcceleo::main::paquetes::generarServicesImpl /]
+
+[import generacionConAcceleo::main::paquetes::generarBaseRepositorie /]
+[import generacionConAcceleo::main::paquetes::generarRepositories /]
+
+[import generacionConAcceleo::main::paquetes::generarMain /]
+
+[template public generateJava1(aDiagramaClases : DiagramaClases)]
+[comment @main/]
+[generarMain()/]
+
+[generarBaseControllerInterface()/]
+[generarBaseControllerImpl()/]
+
+[generarBaseService()/]
+[generarBaseServiceImpl()/]
+
+[generarBaseRepositorie()/]
+
+[generarBaseEntitie()/]
+
+[for (p : Paquete | aDiagramaClases.paquetes_contenidos)]
+	[for (cl : Clase | p.clasificadores_contenidos->selectByType(Clase))]
+
+[generarEntities(p,cl)/]
+
+[generarControllers(cl)/]
+
+[generarServicesInterface(p, cl)/]
+[generarServicesImpl( cl)/]
+
+[generarRepositories( cl)/]
+	[/for]
+[/for]
+
+[/template]
+
+
+
+
+
+
+
+
+
+

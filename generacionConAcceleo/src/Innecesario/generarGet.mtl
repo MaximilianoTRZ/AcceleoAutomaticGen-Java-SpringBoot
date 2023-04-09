@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generarGet('http://www.example.org/ejemploDC4')]
+[template public generarMetodosGet(clase : Clase)]
+[for(a : Atributo | clase.atributos_contenidos)]
+public [a.tipo/] get[a.nombre.toUpperFirst()/]() {
+	return [a.nombre/];
+}
+
+[/for]
+[/template]

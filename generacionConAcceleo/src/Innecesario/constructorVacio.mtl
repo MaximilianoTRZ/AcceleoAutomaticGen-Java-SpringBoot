@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module constructorVacio('http://www.example.org/ejemploDC4')]
+
+
+[template public generarConstructorVacio(clase : Clase)]
+[if(clase.nombre<>'Main') ]
+public [clase.nombre/]() {
+}
+[/if]
+[/template]

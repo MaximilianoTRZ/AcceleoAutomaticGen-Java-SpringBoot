@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generarBaseServiceImpl" nsURI="generacionConAcceleo::main::paquetes::generarBaseServiceImpl" startHeaderPosition="29" endHeaderPosition="-1">
+    <input>
+      <takesTypesFrom href="http://www.example.org/ejemploDC4#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generarBaseServiceImpl" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package services;&#xA;import java.io.Serializable;&#xA;import java.util.List;&#xA;import java.util.Optional;&#xA;import javax.transaction.Transactional;&#xA;import org.springframework.data.domain.Page;&#xA;import org.springframework.data.domain.Pageable;&#xA;import entities.*;&#xA;import  repositories.*;&#xA;&#xA;public abstract class BaseServiceImpl&lt;E extends Base, ID extends Serializable> implements BaseService&lt;E,ID>{&#xA;&#x9;protected BaseRepository&lt;E,ID> baseRepository;&#xA;&#xA;&#x9;public BaseServiceImpl(BaseRepository&lt;E, ID> baseRepository) {&#xA;&#x9;&#x9;this.baseRepository = baseRepository;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public List&lt;E> findAll() throws Exception {&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;List&lt;E> entities =baseRepository.findAll();&#xA;&#x9;&#x9;&#x9;return entities;&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public Page&lt;E> findAll(Pageable pageable) throws Exception{&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;Page&lt;E> entities =baseRepository.findAll(pageable);&#xA;&#x9;&#x9;&#x9;return entities;&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public E findById(ID id) throws Exception {&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;Optional&lt;E> entityOptional =baseRepository.findById(id);&#xA;&#x9;&#x9;&#x9;return entityOptional.get();&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public E save(E entity) throws Exception {&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;entity = baseRepository.save(entity);&#xA;&#x9;&#x9;&#x9;return entity;&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public E update(ID id, E entity) throws Exception {&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;Optional&lt;E> entityOptional= baseRepository.findById(id);&#xA;&#x9;&#x9;&#x9;E entityUpdate=entityOptional.get();&#xA;&#x9;&#x9;&#x9;entityUpdate = baseRepository.save(entity);&#xA;&#x9;&#x9;&#x9;return entityUpdate;&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;@Transactional&#xA;&#x9;public boolean delete(ID id) throws Exception {&#xA;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;if(baseRepository.existsById(id)) {&#xA;&#x9;&#x9;&#x9;&#x9;baseRepository.deleteById(id);&#xA;&#x9;&#x9;&#x9;&#x9;return true;&#xA;&#x9;&#x9;&#x9;}else {&#xA;&#x9;&#x9;&#x9;&#x9;throw new Exception();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;} catch (Exception e) {&#xA;&#x9;&#x9;&#x9;throw new Exception(e.getMessage());&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;}&#xA;&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="services/BaseServiceImpl.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generarBaseServiceImpl">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generarBaseServiceImpl"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generarBaseServiceImpl">
+      <details key="start" value="99"/>
+      <details key="end" value="2312"/>
+      <details key="line" value="4"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generarBaseServiceImpl/%">
+      <details key="start" value="142"/>
+      <details key="end" value="2300"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generarBaseServiceImpl/%/%">
+      <details key="start" value="199"/>
+      <details key="end" value="2293"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generarBaseServiceImpl/%/%.1">
+      <details key="start" value="149"/>
+      <details key="end" value="180"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generarBaseServiceImpl/%/%.2">
+      <details key="start" value="189"/>
+      <details key="end" value="196"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

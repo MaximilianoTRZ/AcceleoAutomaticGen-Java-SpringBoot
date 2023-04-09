@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module generarControllers('http://www.example.org/ejemploDC4')]
+
+[template public generarControllers( cl : Clase)]
+[file ('controllers/'+ cl.nombre +'Controller.java', false, 'UTF-8')]
+package controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import entity.*;
+import services.*;
+
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(path = "api/v1/[cl.nombre.toLower()/]")
+public class [cl.nombre/]Controller extends BaseControllerImpl<[cl.nombre/], [cl.nombre/]ServiceImpl>{
+}
+
+[/file]
+[/template]

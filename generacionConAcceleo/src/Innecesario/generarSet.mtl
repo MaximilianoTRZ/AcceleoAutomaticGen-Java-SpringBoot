@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generarSet('http://www.example.org/ejemploDC4')]
+[template public generarMetodosSet(clase : Clase)]
+[for(a : Atributo | clase.atributos_contenidos)]
+public void set[a.nombre.toUpperFirst()/]([a.tipo/] [a.nombre/]){
+	this.[a.nombre/]=[a.nombre/];
+}
+
+[/for]
+[/template]

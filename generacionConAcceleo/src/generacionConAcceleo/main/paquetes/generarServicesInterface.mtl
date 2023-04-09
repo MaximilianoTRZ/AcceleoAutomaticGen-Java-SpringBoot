@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module generarServicesInterface('http://www.example.org/ejemploDC4')]
+
+[template public generarServicesInterface(p : Paquete, cl : Clase)]
+[file ('services/'+ cl.nombre +'Service.java', false, 'UTF-8')]
+package services;
+import entities.*;
+public interface [cl.nombre.toUpperFirst()/]Service extends BaseService <[cl.nombre.toUpperFirst()/], Long>{
+}
+[/file]
+[/template]

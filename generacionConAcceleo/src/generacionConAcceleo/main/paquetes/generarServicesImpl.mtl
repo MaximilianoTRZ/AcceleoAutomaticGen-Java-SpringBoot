@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module generarServicesImpl('http://www.example.org/ejemploDC4')]
+
+[template public generarServicesImpl( cl : Clase)]
+[file ('services/'+ cl.nombre +'ServiceImpl.java', false, 'UTF-8')]
+package services;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import entities.*;
+import repositories.*;
+
+@Service
+public class [cl.nombre.toUpperFirst()/]ServiceImpl extends BaseServiceImpl<[cl.nombre.toUpperFirst()/], Long> implements [cl.nombre.toUpperFirst()/]Service{
+
+	@Autowired
+	private [cl.nombre.toUpperFirst()/]Repository [cl.nombre.toLower()/]Repository;
+
+	public [cl.nombre.toUpperFirst()/]ServiceImpl(BaseRepository<[cl.nombre.toUpperFirst()/], Long> baseRepository) {
+		super(baseRepository);
+		// TODO Auto-generated constructor stub
+	}
+}
+[/file]
+[/template]

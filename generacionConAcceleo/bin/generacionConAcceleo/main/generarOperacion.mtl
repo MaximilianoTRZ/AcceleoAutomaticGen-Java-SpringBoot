@@ -1,0 +1,14 @@
+[comment encoding = UTF-8 /]
+[module generarOperacion('http://www.example.org/ejemploDC4')]
+[template public generarOperacion(clase : Clase)]
+[for (o : Operacion | clase.operaciones_contenidas)][if (o.retorno.toString() = 'void')]
+[o.visibilidad/] [o.retorno/] [o.nombre/] (){
+}
+
+[else]
+[o.visibilidad/] [o.retorno/] [o.nombre/] (){
+return null;
+}	
+[/if]
+[/for]
+[/template]

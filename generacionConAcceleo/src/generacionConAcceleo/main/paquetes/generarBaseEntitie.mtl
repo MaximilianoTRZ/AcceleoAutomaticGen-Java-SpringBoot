@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module generarBaseEntitie('http://www.example.org/ejemploDC4')]
+[template public generarBaseEntitie()]
+[file ('entities/Base.java', false, 'UTF-8')]
+package entities;
+
+import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@MappedSuperclass
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class Base implements Serializable{
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+}
+
+
+[/file]
+[/template]

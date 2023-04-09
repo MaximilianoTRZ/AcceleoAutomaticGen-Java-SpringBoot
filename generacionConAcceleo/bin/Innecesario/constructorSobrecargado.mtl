@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module constructorSobrecargado('http://www.example.org/ejemploDC4')]
+
+
+[template public generarConstructorSobrecargado(clase : Clase)]
+[if(clase.nombre<>'Main') ]
+public [clase.nombre/]([for(a: Atributo | clase.atributos_contenidos) separator(',')] [a.tipo/] [a.nombre/][/for]) {
+	[for(a: Atributo | clase.atributos_contenidos)]
+		this.[a.nombre/]=[a.nombre/];
+	[/for]
+}	
+[/if]	
+[/template]

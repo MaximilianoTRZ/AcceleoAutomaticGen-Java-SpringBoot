@@ -1,0 +1,14 @@
+[comment encoding = UTF-8 /]
+[module generarRepositories('http://www.example.org/ejemploDC4')]
+[template public generarRepositories( cl : Clase)]
+[file ('repositories/'+'/'+cl.nombre+'Repository.java', false, 'UTF-8')]
+package repositories;
+import org.springframework.stereotype.Repository;
+import entities.*;
+
+@Repository
+public interface [cl.nombre/]Repository extends BaseRepository<[cl.nombre/],Long>{
+}
+[/file]
+[/template]
+

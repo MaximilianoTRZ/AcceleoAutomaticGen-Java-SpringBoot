@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="constructorSobrecargado" nsURI="Innecesario::constructorSobrecargado" startHeaderPosition="29" endHeaderPosition="213">
+    <input>
+      <takesTypesFrom href="http://www.example.org/ejemploDC4#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generarConstructorSobrecargado" visibility="Public">
+      <body xsi:type="mtl:IfBlock">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public "/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="clase" referredVariable="/0/generarConstructorSobrecargado/clase">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Clasificador/nombre"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="("/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ecore:EEnum" href="http://www.example.org/ejemploDC4#//TipoDato"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generarConstructorSobrecargado/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Atributo/tipo"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generarConstructorSobrecargado/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Atributo/nombre"/>
+          </body>
+          <loopVariable name="a">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/OrderedSet(Atributo)">
+            <source xsi:type="ocl.ecore:VariableExp" name="clase" referredVariable="/0/generarConstructorSobrecargado/clase">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ejemploDC4#//Clase/atributos_contenidos"/>
+          </iterSet>
+          <each xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=",">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </each>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=") {&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;this."/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generarConstructorSobrecargado/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Atributo/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="="/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generarConstructorSobrecargado/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Atributo/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=";&#xA;"/>
+          <loopVariable name="a">
+            <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/8/OrderedSet(Atributo)">
+            <source xsi:type="ocl.ecore:VariableExp" name="clase" referredVariable="/0/generarConstructorSobrecargado/clase">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://www.example.org/ejemploDC4#//Clase/atributos_contenidos"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="}&#x9;&#xA;"/>
+        <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="clase" referredVariable="/0/generarConstructorSobrecargado/clase">
+              <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.example.org/ejemploDC4#//Clasificador/nombre"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Main">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/%3C%3E"/>
+        </ifExpr>
+      </body>
+      <parameter name="clase">
+        <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generarConstructorSobrecargado">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generarConstructorSobrecargado"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="clase">
+          <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ejemploDC4_Clase_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.example.org/ejemploDC4#//Clase"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Atributo)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Atributo"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.example.org/ejemploDC4#//Clase"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generarConstructorSobrecargado">
+      <details key="start" value="101"/>
+      <details key="end" value="420"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generarConstructorSobrecargado/%">
+      <details key="start" value="165"/>
+      <details key="end" value="407"/>
+      <details key="line" value="6"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generarConstructorSobrecargado/%/%">
+      <details key="start" value="193"/>
+      <details key="end" value="200"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generarConstructorSobrecargado/%/%.1">
+      <details key="start" value="201"/>
+      <details key="end" value="213"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generarConstructorSobrecargado/%/%.1/clase">
+      <details key="start" value="201"/>
+      <details key="end" value="206"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generarConstructorSobrecargado/%/%.2">
+      <details key="start" value="215"/>
+      <details key="end" value="216"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generarConstructorSobrecargado/%/%.3">
+      <details key="start" value="216"/>
+      <details key="end" value="306"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generarConstructorSobrecargado/%/%.3/%">
+      <details key="start" value="278"/>
+      <details key="end" value="279"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generarConstructorSobrecargado/%/%.3/%.1">
+      <details key="start" value="280"/>
+      <details key="end" value="286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generarConstructorSobrecargado/%/%.3/%.1/a">
+      <details key="start" value="280"/>
+      <details key="end" value="281"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generarConstructorSobrecargado/%/%.3/%.2">
+      <details key="start" value="288"/>
+      <details key="end" value="289"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generarConstructorSobrecargado/%/%.3/%.3">
+      <details key="start" value="290"/>
+      <details key="end" value="298"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generarConstructorSobrecargado/%/%.3/%.3/a">
+      <details key="start" value="290"/>
+      <details key="end" value="291"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generarConstructorSobrecargado/%/%.3/a">
+      <details key="start" value="221"/>
+      <details key="end" value="232"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generarConstructorSobrecargado/%/%.3/%.4">
+      <details key="start" value="235"/>
+      <details key="end" value="261"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generarConstructorSobrecargado/%/%.3/%.4/clase">
+      <details key="start" value="235"/>
+      <details key="end" value="240"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generarConstructorSobrecargado/%/%.3/%.5">
+      <details key="start" value="273"/>
+      <details key="end" value="276"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generarConstructorSobrecargado/%/%.4">
+      <details key="start" value="306"/>
+      <details key="end" value="310"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generarConstructorSobrecargado/%/%.5">
+      <details key="start" value="311"/>
+      <details key="end" value="398"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generarConstructorSobrecargado/%/%.5/%">
+      <details key="start" value="359"/>
+      <details key="end" value="366"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generarConstructorSobrecargado/%/%.5/%.1">
+      <details key="start" value="367"/>
+      <details key="end" value="375"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generarConstructorSobrecargado/%/%.5/%.1/a">
+      <details key="start" value="367"/>
+      <details key="end" value="368"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generarConstructorSobrecargado/%/%.5/%.2">
+      <details key="start" value="377"/>
+      <details key="end" value="378"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generarConstructorSobrecargado/%/%.5/%.3">
+      <details key="start" value="379"/>
+      <details key="end" value="387"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generarConstructorSobrecargado/%/%.5/%.3/a">
+      <details key="start" value="379"/>
+      <details key="end" value="380"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generarConstructorSobrecargado/%/%.5/%.4">
+      <details key="start" value="389"/>
+      <details key="end" value="391"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generarConstructorSobrecargado/%/%.5/a">
+      <details key="start" value="316"/>
+      <details key="end" value="327"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generarConstructorSobrecargado/%/%.5/%.5">
+      <details key="start" value="330"/>
+      <details key="end" value="356"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generarConstructorSobrecargado/%/%.5/%.5/clase">
+      <details key="start" value="330"/>
+      <details key="end" value="335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generarConstructorSobrecargado/%/%.6">
+      <details key="start" value="399"/>
+      <details key="end" value="402"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generarConstructorSobrecargado/%/%.7">
+      <details key="start" value="168"/>
+      <details key="end" value="190"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generarConstructorSobrecargado/%/%.7/%">
+      <details key="start" value="169"/>
+      <details key="end" value="181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generarConstructorSobrecargado/%/%.7/%/clase">
+      <details key="start" value="169"/>
+      <details key="end" value="174"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generarConstructorSobrecargado/%/%.7/%.1">
+      <details key="start" value="183"/>
+      <details key="end" value="189"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generarConstructorSobrecargado/clase">
+      <details key="start" value="149"/>
+      <details key="end" value="162"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>
